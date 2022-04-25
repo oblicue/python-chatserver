@@ -14,6 +14,7 @@ except:
     sys.exit()
 combine = f'{ip}:{port}'
 username = input("enter your username: ")
+requests.put(f'http://{combine}/{username}', data={'content': ''}) # initial request needed for some reason i dont understand
 requests.put(f'http://{combine}/server', data={'content': f'{username} just joined the room!'})
 
 print(f"type '!exit' to leave")
